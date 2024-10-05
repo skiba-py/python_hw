@@ -95,6 +95,8 @@ site/
 
 # PyCharm
 /.idea
+/.idea/
+/.idea/*
 
 # pyre
 .pyre/
