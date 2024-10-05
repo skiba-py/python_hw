@@ -98,5 +98,7 @@ site/
 /.idea/
 /.idea/*
 
+poetry.lock
+
 # pyre
 .pyre/
