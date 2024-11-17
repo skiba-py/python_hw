@@ -6,6 +6,13 @@ class Book(BaseModel):
     author: str
     year: int
     available: bool
+    categories: list[str]
+
+    @field_validator("categories")
+    def categories_must_be_list(cls, v):
+        if not isinstance(v, list):
+            raise ValueError("categories must be a list")
+        return v
 
 
 class User(BaseModel):
@@ -18,3 +25,8 @@ class User(BaseModel):
         if "@" not in v:
             raise ValueError("email must contain @ symbol")
         return v
+
+
+class Library(BaseModel):
+    books: list[Book]
+    users: list[User]
